@@ -16,3 +16,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title-line {
+  position: relative;
+}
+
+.title-line:after {
+  position: absolute;
+  content: "";
+  right: 0px;
+  height: 6px;
+  top: -31px;
+  width: 70px;
+  background-color: #dd6529;
+}
+
+.title-circle {
+  position: relative;
+}
+
+.title-circle:after {
+  position: absolute;
+  content: "";
+  right: 78px;
+  height: 10px;
+  top: -33px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #dd6529;
+}

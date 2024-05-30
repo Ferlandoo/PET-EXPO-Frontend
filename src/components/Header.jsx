@@ -3,9 +3,9 @@ import logo from '../assets/images/logo-expo.svg'
 
 const navItems = {
   home: '/',
-  photo_library: 'gallery',
-  info: 'about',
-  mail: 'contact',
+  photo_library: '/gallery',
+  info: '/about',
+  mail: '/contact',
 };
 
 const adminItems = {
