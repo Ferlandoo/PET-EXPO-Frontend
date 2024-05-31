@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import './index.css';
+import PrivateRoutes from './components/PrivateRoutes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './pages/HomePage';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import AdminDashboard from './pages/admin/AdminDashboard';
 import BirdsPage from './pages/BirdsPage';
 import DogsPage from './pages/DogsPage';
 import CatsPage from './pages/CatsPage';
+import Login from './pages/admin/Login';
+import Dashboard from './pages/admin/Dashboard';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +26,10 @@ const routes = createBrowserRouter(
       <Route path='/gallery/cats' element={<CatsPage />} />
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/admin' element={<AdminDashboard />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='' element={<PrivateRoutes />} >
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Route>
     </Route>
   ),
 );
