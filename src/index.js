@@ -13,8 +13,14 @@ import Contact from './pages/Contact';
 import BirdsPage from './pages/BirdsPage';
 import DogsPage from './pages/DogsPage';
 import CatsPage from './pages/CatsPage';
-import Login from './pages/admin/Login';
+import LoginPage from './pages/admin/LoginPage';
 import Dashboard from './pages/admin/Dashboard';
+import BirdsAdmin from './pages/admin/petPages/BirdsAdmin';
+import DogsAdmin from './pages/admin/petPages/DogsAdmin';
+import CatsAdmin from './pages/admin/petPages/CatsAdmin';
+import BirdEditPage from './pages/admin/petEditPage/BirdEditPage';
+import DogEditPage from './pages/admin/petEditPage/DogEditPage';
+import CatEditPage from './pages/admin/petEditPage/CatEditPage';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -26,9 +32,15 @@ const routes = createBrowserRouter(
       <Route path='/gallery/cats' element={<CatsPage />} />
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' element={<LoginPage />} />
       <Route path='' element={<PrivateRoutes />} >
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard/birds' element={<BirdsAdmin />} />
+        <Route path='/dashboard/dogs' element={<DogsAdmin />} />
+        <Route path='/dashboard/cats' element={<CatsAdmin />} />
+        <Route path='/dashboard/birds/:id/edit' element={<BirdEditPage />} />
+        <Route path='/dashboard/dogs/:id/edit' element={<DogEditPage />} />
+        <Route path='/dashboard/cats/:id/edit' element={<CatEditPage />} />
       </Route>
     </Route>
   ),
