@@ -1,11 +1,11 @@
 const About = () => {
   return (
-    <div className="bg-gray-100 min-h-screen py-10">
+    <div className="bg-gray-100 min-h-screen py-10 ml-12 sm:ml-14">
       <div className="container mx-auto px-4">
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
           <div className="mb-6">
             <h1 className="text-3xl font-semibold text-primary-deep mb-4">About Us</h1>
-            <hr className="border-t-2 border-primary-deep w-80 mx-0" />
+            <hr className="border-t-2 border-primary-deep w-40 sm:w-80 mx-0" />
             <h2 className="text-2xl font-semibold text-primary-deep mb-4 mt-4">Our History</h2>
             <p className="text-gray-700 text-lg leading-relaxed text-justify">
               Founded in 2010, PET EXPO has grown to become the premier event for pet enthusiasts and professionals alike. Our mission is to celebrate the joy and companionship that pets bring into our lives while promoting responsible pet ownership and the well-being of all animals.

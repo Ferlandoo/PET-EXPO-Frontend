@@ -60,17 +60,17 @@ const CatsAdmin = () => {
   }
 
   return (
-    <div className="ml-16 p-6">
-      <div className="flex items-center justify-between">
+    <div className="ml-12 sm:ml-14 p-2">
+      <div className="flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center">
           <Link to="/dashboard/cats">
             <h1 className="text-4xl font-bold font-poppins text-primary-deep mr-4 text-right">Cats</h1>
           </Link>
           <div className="m-0">
-            <Lottie options={defaultOptions} height={80} width={80} />
+            <Lottie options={defaultOptions} height={70} width={70} />
           </div>
         </div>
-        <div className="flex w-2/6">
+        <div className="flex w-full sm:w-2/6 py-2 sm:mt-0">
           <input
             type="text"
             placeholder="Search cats..."
@@ -80,7 +80,7 @@ const CatsAdmin = () => {
           />
           <button
             className="inline-flex items-center gap-2 bg-primary-deep text-white text-lg font-semibold py-3 px-6 rounded-r-md">
-            <span className="hidden md:block">
+            <span className="block">
               <svg className="text-white h-5 w-5 p-0 fill-current" xmlns="http://www.w3.org/2000/svg"
                 version="1.1" x="0px" y="0px"
                 viewBox="0 0 56.966 56.966"
@@ -92,40 +92,42 @@ const CatsAdmin = () => {
           </button>
         </div>
       </div>
-      <table className="w-full table-auto">
-        <thead>
-          <tr>
-            <th className="px-4 py-2 bg-primary-deep text-white">Name</th>
-            <th className="px-4 py-2 bg-primary-deep text-white">Origin</th>
-            <th className="px-4 py-2 bg-primary-deep text-white">Color</th>
-            <th className="bg-blue-500 hover:bg-blue-700 p-0">
-              <Link to="/edit" className="flex items-center justify-center h-full w-full text-white p-2">
-                <span>Add cat</span>
-                <FaPlus className='ml-2 bg-white text-blue-500 rounded-full p-1' />
-              </Link>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentPets.map((pet, index) => (
-            <tr key={index} className="bg-gray-100">
-              <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.name}</td>
-              <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.origin}</td>
-              <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.colors.join(', ')}</td>
-              <td className="border px-4 py-2 bg-white text-center">
-                <Link to={`${pet._id}/edit`}>
-                  <button className="text-white bg-blue-500 hover:bg-blue-700 p-1 rounded mr-2 ">
-                    <FaEdit />
-                  </button>
+      <div className='overflow-scroll'>
+        <table className="w-full table-auto">
+          <thead>
+            <tr>
+              <th className="px-4 py-2 bg-primary-deep text-white">Name</th>
+              <th className="px-4 py-2 bg-primary-deep text-white">Origin</th>
+              <th className="px-4 py-2 bg-primary-deep text-white">Color</th>
+              <th className="bg-blue-500 hover:bg-blue-700 p-0">
+                <Link to="create" className="flex items-center justify-center h-full w-full text-white p-2">
+                  <span>Add cat</span>
+                  <FaPlus className='ml-2 bg-white text-blue-500 rounded-full p-1 hidden sm:block' />
                 </Link>
-                <button onClick={() => deleteCat(pet._id)} className="text-white bg-red-500 hover:bg-red-700 p-1 rounded">
-                  <FaTrash />
-                </button>
-              </td>
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {currentPets.map((pet, index) => (
+              <tr key={index} className="bg-gray-100">
+                <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.name}</td>
+                <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.origin}</td>
+                <td className="border px-4 py-2 bg-primary-light text-center border-white">{pet.colors.join(', ')}</td>
+                <td className="border px-4 py-2 bg-white text-center">
+                  <Link to={`${pet._id}/edit`}>
+                    <button className="text-white bg-blue-500 hover:bg-blue-700 p-1 rounded mr-0 sm:mr-2">
+                      <FaEdit />
+                    </button>
+                  </Link>
+                  <button onClick={() => deleteCat(pet._id)} className="text-white bg-red-500 hover:bg-red-700 p-1 rounded">
+                    <FaTrash />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="flex justify-center mt-4">
         {[...Array(Math.ceil(filteredCats.length / petPerPage)).keys()].map(number => (
           <button

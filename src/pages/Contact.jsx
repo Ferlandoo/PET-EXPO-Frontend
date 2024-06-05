@@ -40,10 +40,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 min-h-screen py-10">
+    <div className="flex justify-center items-center bg-gray-100 min-h-screen py-10 ml-12 sm:ml-14">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-primary-deep mb-8">Contact Us</h1>
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto mb-8">
           {messageSent && <p className="text-green-500 text-center mb-4">Your message has been sent successfully!</p>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

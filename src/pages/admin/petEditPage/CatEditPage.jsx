@@ -65,10 +65,10 @@ const CatEditPage = () => {
   }
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 min-h-screen py-10">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center text-primary-deep mb-8">Edit Cat</h1>
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-xl mx-auto">
+    <div className="flex justify-center items-center bg-gray-100 min-h-screen ml-12 sm:ml-14 py-10">
+      <div className="container mx-auto px-4 mb-8">
+        <h1 className="text-4xl font-bold text-center text-primary-deep mb-8">Edit {name}</h1>
+        <div className="bg-white p-4 sm:p-8 rounded-lg shadow-lg max-w-xl mx-auto">
           <form onSubmit={submitHandler}>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>

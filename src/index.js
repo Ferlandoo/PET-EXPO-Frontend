@@ -21,6 +21,9 @@ import CatsAdmin from './pages/admin/petPages/CatsAdmin';
 import BirdEditPage from './pages/admin/petEditPage/BirdEditPage';
 import DogEditPage from './pages/admin/petEditPage/DogEditPage';
 import CatEditPage from './pages/admin/petEditPage/CatEditPage';
+import CreateDog from './pages/admin/createPets/CreateDog';
+import CreateCat from './pages/admin/createPets/CreateCat';
+import CreateBird from './pages/admin/createPets/CreateBird';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +44,9 @@ const routes = createBrowserRouter(
         <Route path='/dashboard/birds/:id/edit' element={<BirdEditPage />} />
         <Route path='/dashboard/dogs/:id/edit' element={<DogEditPage />} />
         <Route path='/dashboard/cats/:id/edit' element={<CatEditPage />} />
+        <Route path='/dashboard/dogs/create' element={<CreateDog />} />
+        <Route path='/dashboard/cats/create' element={<CreateCat />} />
+        <Route path='/dashboard/birds/create' element={<CreateBird />} />
       </Route>
     </Route>
   ),

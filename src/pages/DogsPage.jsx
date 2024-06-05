@@ -10,17 +10,17 @@ const Modal = ({ show, onClose, dog }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-4 rounded shadow-lg flex relative w-3/6">
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-30">
+      <div className="bg-white p-4 rounded shadow-lg flex flex-col sm:flex-row relative w-full h-full sm:w-3/6 sm:h-auto overflow-scroll">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-primary-deep text-white font-bold px-3 py-1 rounded hover:bg-primary-dark transition-colors">
+          className="absolute top-4 right-4 bg-primary-light text-primary-deep sm:bg-primary-deep sm:text-white font-bold px-3 py-1 sm:rounded hover:bg-primary-dark transition-colors">
           X
         </button>
-        <div className="mr-4 flex justify-center">
-          <img src={dog.image} alt={dog.name} className="h-auto w-auto rounded mb-4 object-cover" />
+        <div className="flex justify-center mb-4 sm:mb-0 sm:mr-4">
+          <img src={dog.image} alt={dog.name} className="h-auto w-full sm:w-auto rounded object-cover" />
         </div>
-        <div className="w-4/6">
+        <div className="w-full sm:w-4/6">
           <h2 className="inline-block text-2xl font-bold mb-4 bg-primary-deep text-white py-1 px-2 rounded">{dog.name}</h2>
           <p className="mb-4"><strong>Breed group:</strong> {dog.breed_group}</p>
           <p className="mb-4"><strong>Size:</strong> {dog.size}</p>
@@ -92,15 +92,15 @@ const DogsPage = () => {
   }
 
   return (
-    <div className="ml-14">
-      <div className="flex items-center justify-between">
+    <div className="ml-12 sm:ml-14">
+      <div className="flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center ml-2">
           <h1 className="text-4xl font-bold font-poppins my-6 text-primary-deep mr-4 text-right">Dogs</h1>
           <div className="m-0">
-            <Lottie options={defaultOptions} height={80} width={80} />
+            <Lottie options={defaultOptions} height={70} width={70} />
           </div>
         </div>
-        <div className="flex w-2/6 px-4">
+        <div className="flex w-full sm:w-2/6 px-4 mt-4 sm:mt-0">
           <input
             type="text"
             placeholder="Search dogs..."
@@ -110,7 +110,7 @@ const DogsPage = () => {
           />
           <button
             className="inline-flex items-center gap-2 bg-primary-deep text-white text-lg font-semibold py-3 px-6 rounded-r-md">
-            <span className="hidden md:block">
+            <span className="block">
               <svg className="text-white h-5 w-5 p-0 fill-current" xmlns="http://www.w3.org/2000/svg"
                 version="1.1" x="0px" y="0px"
                 viewBox="0 0 56.966 56.966"
@@ -122,7 +122,7 @@ const DogsPage = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-6 gap-2 mt-4 px-2 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-6 gap-2 mt-4 px-2 mb-12">
         {filteredDogs.map((dog) => (
           <div key={dog._id} className="relative overflow-hidden" onClick={() => handleImageClick(dog)}>
             <img src={dog.image} alt="dog" className="w-full h-full object-cover rounded transform transition duration-400 hover:scale-110" />

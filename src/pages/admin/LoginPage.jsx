@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 min-h-screen py-10">
+    <div className="flex justify-center items-center bg-gray-100 min-h-screen py-10 ml-12 sm:ml-14">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-primary-deep mb-8">Log In</h1>
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
@@ -37,7 +37,7 @@ const Login = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full p-3 border rounded-md focus:outline-none focus:border-primary-deep"
-                placeholder="Enter your full name"
+                placeholder="Enter username"
                 required
               />
             </div>
@@ -51,7 +51,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border rounded-md focus:outline-none focus:border-primary-deep"
-                placeholder="Enter your password"
+                placeholder="Enter Password"
                 required
               />
             </div>
