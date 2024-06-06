@@ -24,6 +24,7 @@ import CatEditPage from './pages/admin/petEditPage/CatEditPage';
 import CreateDog from './pages/admin/createPets/CreateDog';
 import CreateCat from './pages/admin/createPets/CreateCat';
 import CreateBird from './pages/admin/createPets/CreateBird';
+import AdminProfile from './pages/admin/AdminProfile';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -47,6 +48,7 @@ const routes = createBrowserRouter(
         <Route path='/dashboard/dogs/create' element={<CreateDog />} />
         <Route path='/dashboard/cats/create' element={<CreateCat />} />
         <Route path='/dashboard/birds/create' element={<CreateBird />} />
+        <Route path='/settings' element={<AdminProfile />} />
       </Route>
     </Route>
   ),

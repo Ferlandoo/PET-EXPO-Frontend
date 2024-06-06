@@ -44,6 +44,9 @@ const Header = () => {
         </nav>
         {isAuth && (
           <nav>
+            <Link to='/settings' className="grid place-items-center w-12 h-12 sm:w-14 sm:h-14">
+              <FaUser className="w-8 h-8 text-white hover:text-primary-deep p-1 hover:bg-white hover:rounded-full transition-transform" />
+            </Link>
             <Link to='/dashboard' className="grid place-items-center w-12 h-12 sm:w-14 sm:h-14">
               <FaLayerGroup className="w-8 h-8 text-white hover:text-primary-deep p-1 hover:bg-white hover:rounded-full transition-transform" />
             </Link>
